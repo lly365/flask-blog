@@ -1,0 +1,26 @@
+{% extends 'frontend/layout.html' %}
+{% block content %}
+    <div class="container">
+        <div class="page-header">
+            <h1>{{ cat.name }}
+                <small>分类</small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+               <ul class="list-group">
+                    {% for post in posts %}
+                        <li class="list-group-item"><span class="label label-default">#{{ post.id }}</span> <a href="{{ url_for('.post_detail', id=post.id) }}"> {{ post.title }}</a>
+                            {% for tag in post.tags %}
+                                <a href="{{ url_for('.tag_detail', id=tag.id) }}" class="label label-info">{{ tag.name }}</a>
+                            {% endfor %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-3">
+                {% include 'frontend/cat-sidebar.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

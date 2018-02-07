@@ -1,0 +1,19 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %} Flask Blog 用户登录{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="page-header">
+            <h1>Flask Blog 用户登录</h1>
+        </div>
+        {% for msg in get_flashed_messages() %}
+            <div class="alert alert-warning">{{ msg }}</div>
+        {% endfor %}
+        <div class="container">
+            {{ wtf.quick_form(form) }}
+            <div>没有账号？立即<a href="{{ url_for('frontend.register') }}"><i class="glyphicon glyphicon-record"></i> 注册</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

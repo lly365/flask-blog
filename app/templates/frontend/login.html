@@ -1,0 +1,15 @@
+{% extends "frontend/layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %} Flask Blog 登录{% endblock %}
+{% block content %}
+    <div class="page-header">
+        <h1>Flask Blog 登录</h1>
+    </div>
+    {% for msg in get_flashed_messages() %}
+    <div class="alert alert-warning">{{ msg }}</div>
+    {% endfor %}
+    <div class="container">
+    {{ wtf.quick_form(form) }}
+    </div>
+{% endblock %}
