@@ -15,6 +15,7 @@ class Config:
     TESTING = False
     SQLALCHEMY_DATABASE_URI = 'postgresql://ling:@localhost/flask_blog'
     SQLALCHEMY_ECHO = True
+    BOOTSTRAP_SERVE_LOCAL = True
 
     @staticmethod
     def init_app(app):
