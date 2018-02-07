@@ -16,6 +16,10 @@ class Config:
     SQLALCHEMY_DATABASE_URI = 'postgresql://ling:@localhost/flask_blog'
     SQLALCHEMY_ECHO = True
 
+    @staticmethod
+    def init_app(app):
+        pass
+
 
 class DevelopmentConfig(Config):
     DEBUG = True
