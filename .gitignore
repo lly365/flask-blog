@@ -157,4 +157,4 @@ crashlytics-build.properties
 fabric.properties
 migrations
 .idea
-
+.DS_Store
