@@ -12,6 +12,7 @@ from app import create_app, db
 from flask_script import Server, Shell, Manager
 from flask_migrate import MigrateCommand, Migrate
 from os import getenv
+from app.models import Category, Post, Tag
 
 app = create_app(getenv('FLASK_BLOG_ENV', 'default'))
 
@@ -21,7 +22,7 @@ manager = Manager(app)
 
 
 def make_shell_context():
-    return dict(app=app, db=db)
+    return dict(app=app, db=db, Category=Category, Post=Post, Tag=Tag)
 
 
 @manager.command
